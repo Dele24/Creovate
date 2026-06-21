@@ -1,0 +1,984 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Creovate</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- General Sans -->
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Inter -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: #000;
+        color: white;
+        overflow-x: hidden;
+      }
+      h1 {
+        font-family: "General Sans", sans-serif;
+        font-weight: 700;
+      }
+
+      h2 {
+        font-family: "General Sans", sans-serif;
+        font-weight: 600;
+      }
+
+      /* Future Scroll Reveal */
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s ease;
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+      <!-- Top Spotlight -->
+      <div
+        class="absolute top-0 right-0 w-[700px] h-[700px] bg-white/10 blur-[180px] rounded-full"
+      ></div>
+
+      <!-- Bottom Spotlight -->
+      <div
+        class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-white/5 blur-[180px] rounded-full"
+      ></div>
+    </div>
+    <!-- SECTION 1 NAVBAR START -->
+
+    <header
+      class="fixed top-0 left-0 w-full z-50 bg-black/60 backdrop-blur-xl border-b border-white/5"
+    >
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <a href="#" class="flex items-center gap-3 group">
+            <div class="w-12 h-12 flex items-center justify-center">
+              <span class="text-white text-5xl font-bold"> C </span>
+            </div>
+
+            <span
+              class="text-white text-xl font-semibold tracking-wide"
+              style="font-family: &quot;General Sans&quot;, sans-serif"
+            >
+              CREOVATE
+            </span>
+          </a>
+
+          <!-- Desktop Menu -->
+          <nav class="hidden lg:flex items-center gap-10">
+            <a href="#home" class="text-white/80 hover:text-white transition">
+              Home
+            </a>
+
+            <a
+              href="#testimonials"
+              class="text-white/80 hover:text-white transition"
+            >
+              Testimonials
+            </a>
+
+            <a href="#about" class="text-white/80 hover:text-white transition">
+              About
+            </a>
+
+            <a
+              href="#contact"
+              class="text-white/80 hover:text-white transition"
+            >
+              Contact
+            </a>
+          </nav>
+
+          <!-- Desktop Buttons -->
+          <div class="hidden lg:flex items-center gap-4">
+            <button
+              class="group px-6 py-3 rounded-xl border border-white/20 text-white transition-all duration-300 hover:border-white hover:bg-white/5 hover:scale-105 active:scale-95"
+            >
+              <span class="flex items-center gap-2">
+                <a href="https://t.me/CreovateOff">Join as Creator</a>
+              </span>
+            </button>
+
+            <button
+              class="group px-6 py-3 rounded-xl bg-white text-black font-semibold transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] active:scale-95"
+            >
+              <a href="https://t.me/CreovateOff">Launch Campaign</a>
+            </button>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button id="menu-btn" class="lg:hidden">
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="white"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden bg-black border-t border-white/10"
+      >
+        <div class="flex flex-col px-6 py-6 gap-5">
+          <a href="#home"> Home </a>
+
+          <a href="#testimonials"> Testimonials </a>
+
+          <a href="#about"> About </a>
+
+          <a href="#csontact"> Contact </a>
+
+          <button class="border border-white/20 rounded-xl py-3">
+            <a href="https://t.me/CreovateOff">Join as Creator</a>
+          </button>
+
+          <button class="bg-white text-black rounded-xl py-3 font-semibold">
+            <a href="https://t.me/CreovateOff">Launch Campaign</a>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- SECTION 1 NAVBAR END -->
+
+    <!-- HERO SECTION -->
+    <section
+      id="home"
+      class="reveal relative min-h-screen flex items-center justify-center pt-32 pb-20 px-6"
+    >
+      <div class="max-w-6xl mx-auto text-center">
+        <!-- Badge -->
+        <div
+          class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md mb-8"
+        >
+          <div class="w-2 h-2 rounded-full bg-green-500"></div>
+
+          <span class="text-xs uppercase tracking-wider text-white/80">
+            WEB3 CREATOR NETWORK
+          </span>
+        </div>
+
+        <!-- Heading -->
+        <h1
+          class="reveal text-5xl md:text-7xl leading-[0.95] tracking-tight max-w-5xl mx-auto"
+        >
+          Connect With Creators.
+          <br />
+          Grow Your Web3 Brand.
+        </h1>
+
+        <!-- Description -->
+        <p
+          class="reveal mt-8 text-sm md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed"
+        >
+          Creovate helps founders gain traction through trusted creators,
+          authentic content, and engaged communities that turn innovative
+          projects into recognized brands.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div
+          class="reveal mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <!-- Launch -->
+          <button
+            class="group bg-white text-black font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.15)] active:scale-95"
+          >
+            <span class="flex items-center gap-3">
+              <a href="https://t.me/CreovateOff">Launch a Campaign</a>
+
+              <svg
+                class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path d="M5 12h14" />
+                <path d="M13 5l7 7-7 7" />
+              </svg>
+            </span>
+          </button>
+
+          <!-- Join -->
+          <button
+            class="group border border-white/20 px-8 py-4 rounded-xl text-white transition-all duration-300 hover:border-white hover:bg-white/5 hover:scale-105 active:scale-95"
+          >
+            <span class="flex items-center gap-3">
+              <a href="https://t.me/CreovateOff">Join Creator Network</a>
+
+              <svg
+                class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path d="M5 12h14" />
+                <path d="M13 5l7 7-7 7" />
+              </svg>
+            </span>
+          </button>
+        </div>
+
+        <!-- Stats -->
+        <div
+          class="reveal mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
+        >
+          <div>
+            <h3 class="text-4xl font-semibold">500+</h3>
+
+            <p class="text-white/60 mt-2">Creators</p>
+          </div>
+
+          <div>
+            <h3 class="text-4xl font-semibold">2+</h3>
+
+            <p class="text-white/60 mt-2">Campaigns</p>
+          </div>
+
+          <div>
+            <h3 class="text-4xl font-semibold">1.5M+</h3>
+
+            <p class="text-white/60 mt-2">Impressions</p>
+          </div>
+
+          <div>
+            <h3 class="text-3xl md:text:4xl font-semibold">100+</h3>
+
+            <p class="text-white/60 mt-2">Founders Connected</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ABOUT SECTION -->
+    <section id="about" class="reveal px-6 pb-24">
+      <div
+        class="max-w-7xl mx-auto border border-white/10 rounded-3xl overflow-hidden bg-white/[0.01] backdrop-blur-sm"
+      >
+        <div class="grid lg:grid-cols-2">
+          <!-- LEFT SIDE -->
+          <div class="p-8 lg:p-12 reveal">
+            <span class="text-xs uppercase tracking-[0.2em] text-white/50">
+              ABOUT CREOVATE
+            </span>
+
+            <h2 class="mt-4 text-4xl lg:text-5xl leading-tight">
+              Connecting Great Projects
+              <br />
+              With Trusted Creators.
+            </h2>
+
+            <div class="mt-8 space-y-6 text-white/70 leading-relaxed">
+              <p>
+                Every great Web3 project starts with a vision, but reaching the
+                right audience can be a challenge in a crowded ecosystem.
+              </p>
+
+              <p>
+                Creovate connects ambitious Web3 brands with trusted creators
+                who turn attention into meaningful engagement through authentic
+                creator-led campaigns.
+              </p>
+
+              <p>
+                Our network includes carefully selected creators, analysts,
+                researchers, community builders, and influencers who are
+                passionate about Web3 and focused on delivering real value.
+              </p>
+
+              <p>
+                Whether you're launching a new project, growing a community, or
+                expanding your reach, Creovate helps your message reach the
+                people who matter most.
+              </p>
+
+              <p>
+                Because the strongest communities aren't bought, they're built
+                through trust, authentic voices, and meaningful connections.
+              </p>
+            </div>
+          </div>
+
+          <!-- RIGHT SIDE -->
+          <div
+            class="border-t lg:border-t-0 lg:border-l border-white/10 p-8 lg:p-12 reveal"
+          >
+            <span class="text-xs uppercase tracking-[0.2em] text-white/50">
+              WHY PROJECTS CHOOSE CREOVATE
+            </span>
+
+            <div class="mt-8 space-y-6">
+              <!-- Item -->
+              <div
+                class="flex gap-5 p-5 rounded-2xl border border-white/5 hover:border-white/10 transition-all duration-300 hover:border-white hover:bg-white/5 hover:scale-105 active:scale-95"
+              >
+                <div class="hidden md:block flex items-center justify-center">
+                  <img
+                    src="assets/shield.png"
+                    alt=""
+                    class="w-20 rounded-2xl border border-white/10"
+                  />
+                </div>
+
+                <div>
+                  <h3 class="text-xl font-semibold">
+                    Carefully Vetted Creators
+                  </h3>
+
+                  <p class="text-white/60 mt-2">
+                    We handpick creators and analysts with proven credibility
+                    and real community influence.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item -->
+              <div
+                class="flex gap-5 p-5 rounded-2xl border border-white/5 hover:border-white/10 transition-all duration-300 hover:border-white hover:bg-white/5 hover:scale-105 active:scale-95"
+              >
+                <div class="hidden md:block flex items-center justify-center">
+                  <img
+                    src="assets/bar.png"
+                    alt=""
+                    class="w-20 rounded-2xl border border-white/10"
+                  />
+                </div>
+
+                <div>
+                  <h3 class="text-xl font-semibold">
+                    Performance-Driven Campaigns
+                  </h3>
+
+                  <p class="text-white/60 mt-2">
+                    Transparent reporting and data-backed strategies to maximize
+                    campaign performance.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item -->
+              <div
+                class="flex gap-5 p-5 rounded-2xl border border-white/5 hover:border-white/10 transition-all duration-300 hover:border-white hover:bg-white/5 hover:scale-105 active:scale-95"
+              >
+                <div class="hidden md:block flex items-center justify-center">
+                  <img
+                    src="assets/Chat.png"
+                    alt=""
+                    class="w-20 rounded-2xl border border-white/10"
+                  />
+                </div>
+
+                <div>
+                  <h3 class="text-xl font-semibold">
+                    Transparent Communication
+                  </h3>
+
+                  <p class="text-white/60 mt-2">
+                    Real-time updates, clear expectations, and direct
+                    collaboration.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item -->
+              <div
+                class="flex gap-5 p-5 rounded-2xl border border-white/5 hover:border-white/10 transition-all duration-300 hover:border-white hover:bg-white/5 hover:scale-105 active:scale-95"
+              >
+                <div class="hidden md:block flex items-center justify-center">
+                  <img
+                    src="assets/web.png"
+                    alt=""
+                    class="w-20 rounded-2xl border border-white/10"
+                  />
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold">Web3-Native Expertise</h3>
+
+                  <p class="text-white/60 mt-2">
+                    Deep understanding of Web3 culture, communities, and growth
+                    mechanics.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW CREOVATE WORKS -->
+    <section class="px-6 pb-8 md:pb-24">
+      <div class="max-w-7xl mx-auto">
+        <!-- Section Label -->
+        <div class="text-center reveal">
+          <span class="text-xs uppercase tracking-[0.2em] text-white/50">
+            HOW CREOVATE WORKS
+          </span>
+
+          <h2 class="mt-3 text-4xl lg:text-5xl">
+            Simple. Transparent. Effective.
+          </h2>
+        </div>
+
+        <!-- Process Cards -->
+        <div class="reveal grid md:grid-cols-2 xl:grid-cols-4 gap-6 mt-12">
+          <!-- CARD 1 -->
+          <div
+            class="process-card reveal group border border-white/10 rounded-2xl p-6 bg-white/[0.01] hover:border-white/20 transition-all duration-300 hover:border-white hover:bg-white/5 hover:scale-105 active:scale-95"
+          >
+            <div
+              class="w-10 h-10 rounded-full bg-white text-black border border-white/20 flex items-center justify-center font-semibold"
+            >
+              1
+            </div>
+
+            <div class="mt-6">
+              <img src="assets/note.png" alt="notes" class="w-12" />
+            </div>
+
+            <h3 class="mt-5 text-xl font-semibold">Share Your Goals</h3>
+
+            <p class="mt-3 text-white/60 leading-relaxed">
+              Tell us about your project, target audience, and campaign goals.
+            </p>
+          </div>
+
+          <!-- CARD 2 -->
+          <div
+            class="process-card reveal group border border-white/10 rounded-2xl p-6 bg-white/[0.01] hover:border-white/20 transition-all duration-300 hover:border-white hover:bg-white/5 hover:scale-105 active:scale-95"
+          >
+            <div
+              class="w-10 h-10 rounded-full bg-white text-black border border-white/20 flex items-center justify-center font-semibold"
+            >
+              2
+            </div>
+
+            <div class="mt-6">
+              <img src="assets/community2.png" alt="community" class="w-12" />
+            </div>
+
+            <h3 class="mt-5 text-xl font-semibold">We Match Creators</h3>
+
+            <p class="mt-3 text-white/60 leading-relaxed">
+              We handpick creators and analysts from our network that best fit
+              your campaign.
+            </p>
+          </div>
+
+          <!-- CARD 3 -->
+          <div
+            class="process-card reveal group border border-white/10 rounded-2xl p-6 bg-white/[0.01] hover:border-white/20 transition-all duration-300 hover:border-white hover:bg-white/5 hover:scale-105 active:scale-95"
+          >
+            <div
+              class="w-10 h-10 rounded-full bg-white text-black border border-white/20 flex items-center justify-center font-semibold"
+            >
+              3
+            </div>
+
+            <div class="mt-6">
+              <img src="assets/tgicon.png" alt="telegramicon" class="w-12" />
+            </div>
+
+            <h3 class="mt-5 text-xl font-semibold">Content Goes Live</h3>
+
+            <p class="mt-3 text-white/60 leading-relaxed">
+              Creators publish authentic content that resonates with their
+              audience.
+            </p>
+          </div>
+
+          <!-- CARD 4 -->
+          <div
+            class="process-card reveal group border border-white/10 rounded-2xl p-6 bg-white/[0.01] hover:border-white/20 transition-all duration-300 hover:border-white hover:bg-white/5 hover:scale-105 active:scale-95"
+          >
+            <div
+              class="w-10 h-10 rounded-full bg-white text-black border border-white/20 flex items-center justify-center font-semibold"
+            >
+              4
+            </div>
+
+            <div class="mt-6">
+              <img src="assets/candlebar.png" alt="candle bar" class="w-12" />
+            </div>
+
+            <h3 class="mt-5 text-xl font-semibold">Track & Optimize</h3>
+
+            <p class="mt-3 text-white/60 leading-relaxed">
+              Monitor performance, analyze results, and optimize for growth.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="testimonials"
+      class="reveal max-w-7xl mx-auto px-6 py-24 reveal"
+    >
+      <div class="text-center mb:8 md:mb-12">
+        <p class="uppercase tracking-[0.3em] text-xs text-white/50 mb-3">
+          TESTIMONIALS
+        </p>
+
+        <h2 class="font-general font-semibold text-4xl text-white">
+          Trusted by Web3 Teams, Founders & Communities
+        </h2>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="testimonial-card">
+          <div class="text-4xl text-white/40 mb-6">❝</div>
+
+          <p class="text-white/70 leading-relaxed mb-8">
+            Creovate helped us reach the right audience through authentic
+            creators. The results exceeded our expectations.
+          </p>
+
+          <div class="flex items-center gap-4">
+            <img
+              src="assets/Testimonials.png"
+              alt=""
+              class="w-12 h-12 rounded-full"
+            />
+
+            <div>
+              <h4 class="text-white font-medium">Alex R.</h4>
+
+              <p class="text-white/50 text-sm">Marketing Lead, DeFi Project</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="testimonial-card">
+          <div class="text-4xl text-white/40 mb-6">❝</div>
+
+          <p class="text-white/70 leading-relaxed mb-8">
+            The quality of creators and the level of communication is unmatched.
+            Highly recommend for any Web3 project.
+          </p>
+
+          <div class="flex items-center gap-4">
+            <img
+              src="https://i.pravatar.cc/100?img=32"
+              alt=""
+              class="w-12 h-12 rounded-full"
+            />
+
+            <div>
+              <h4 class="text-white font-medium">Sarah K.</h4>
+
+              <p class="text-white/50 text-sm">CMO, Blockchain Protocol</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="testimonial-card">
+          <div class="text-4xl text-white/40 mb-6">❝</div>
+
+          <p class="text-white/70 leading-relaxed mb-8">
+            Great network, transparent process, and amazing results. Our
+            community growth was exponential.
+          </p>
+
+          <div class="flex items-center gap-4">
+            <img
+              src="assets/female1.png"
+              alt=""
+              class="w-12 h-12 rounded-full"
+            />
+
+            <div>
+              <h4 class="text-white font-medium">Mike T.</h4>
+
+              <p class="text-white/50 text-sm">Growth Lead, Web3 Gaming</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- TEAM SECTION -->
+
+    <section id="team" class="max-w-7xl mx-auto px-6 py:12 md:py-24 reveal">
+      <div class="text-center mb-16">
+        <p class="uppercase tracking-[0.3em] text-xs text-white/50 mb-3">
+          OUR TEAM
+        </p>
+
+        <h2 class="font-general font-semibold text-4xl text-white">
+          Meet The People Behind Creovate
+        </h2>
+
+        <p class="text-white/60 max-w-2xl mx-auto mt-4">
+          A team of builders, marketers, and Web3 natives focused on helping
+          projects grow through trusted creator partnerships.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Founder -->
+
+        <div class="team-card">
+          <img src="assets/founder.png" alt="Founder" class="team-image" />
+
+          <h3 class="team-name">Jack</h3>
+
+          <p class="team-role">Founder</p>
+
+          <a
+            href="https://x.com/cryptowithjack?s=21&t=mjsRu9Q9TgxMHTPMeEYPGA"
+            target="_blank"
+            class="team-x"
+          >
+            @CryptoWithJack
+          </a>
+
+          <p class="team-bio">
+            Visionary behind Creovate, focused on building meaningful
+            connections between Web3 projects and trusted creators.
+          </p>
+        </div>
+
+        <!-- Co Founder -->
+
+        <div class="team-card">
+          <img
+            src="assets/co-founder.png"
+            alt="Co-Founder"
+            class="team-image"
+          />
+
+          <h3 class="team-name">HunTeR</h3>
+
+          <p class="team-role">Co-Founder</p>
+
+          <a
+            href="https://x.com/CryptoWithunter"
+            target="_blank"
+            class="team-x"
+          >
+            @CryptoWithunter
+          </a>
+
+          <p class="team-bio">
+            Oversees partnerships, creator relationships, and strategic growth
+            initiatives across the Creovate ecosystem.
+          </p>
+        </div>
+
+        <!-- Chief Developer -->
+
+        <div class="team-card">
+          <img
+            src="assets/OraclePFP.jpg"
+            alt="Chief Developer"
+            class="team-image"
+          />
+
+          <h3 class="team-name">Oracle</h3>
+
+          <p class="team-role">Chief Developer</p>
+
+          <a
+            href="https://x.com/devoracle01?s=11&t=mjsRu9Q9TgxMHTPMeEYPGA"
+            target="_blank"
+            class="team-x"
+          >
+            @DevOracle01
+          </a>
+
+          <p class="team-bio">
+            Leads platform development and technical infrastructure to ensure a
+            seamless experience for projects and creators.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- FAQ SECTION -->
+
+    <section id="faq" class="max-w-7xl mx-auto px-6 py-24 reveal">
+      <div class="text-center mb-14">
+        <h2 class="font-general text-3xl md:text-4xl font-semibold text-white">
+          FREQUENTLY ASKED QUESTIONS
+        </h2>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-10">
+        <!-- Projects FAQ -->
+
+        <div>
+          <p class="text-white/60 mb-4">For Projects</p>
+
+          <div class="space-y-4">
+            <div class="faq-item">
+              <button class="faq-btn">
+                <span>How do creator campaigns work?</span>
+                <span>+</span>
+              </button>
+
+              <div class="faq-content">
+                Creovate matches your project with vetted creators who produce
+                authentic content for their communities.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn">
+                <span>How are creators selected?</span>
+                <span>+</span>
+              </button>
+
+              <div class="faq-content">
+                We carefully vet every creator based on audience quality,
+                engagement, and Web3 relevance.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn">
+                <span>How long does a campaign take?</span>
+                <span>+</span>
+              </button>
+
+              <div class="faq-content">
+                Most campaigns launch within a few days after strategy approval
+                and creator matching.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Creators FAQ -->
+
+        <div>
+          <p class="text-white/60 mb-4">For Creators</p>
+
+          <div class="space-y-4">
+            <div class="faq-item">
+              <button class="faq-btn">
+                <span>How can I join the Creovate network?</span>
+                <span>+</span>
+              </button>
+
+              <div class="faq-content">
+                Submit your application and our team will review your profile
+                and audience quality.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn">
+                <span>How does payment work?</span>
+                <span>+</span>
+              </button>
+
+              <div class="faq-content">
+                Payments are processed after campaign completion according to
+                agreed deliverables.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn">
+                <span>What types of campaigns are available?</span>
+                <span>+</span>
+              </button>
+
+              <div class="faq-content">
+                Awareness campaigns, community growth, product launches, content
+                collaborations, and more.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section id="cta" class="max-w-7xl mx-auto px-6 pb-20 reveal">
+      <div
+        class="border border-white/10 rounded-3xl py-12 px-8 text-center bg-white/[0.02] backdrop-blur-sm cta-glow border border-white/10 rounded-3xl py-12 px-8 text-center"
+      >
+        <h2 class="font-general font-semibold text-4xl text-white mb-3">
+          Ready to Grow Together?
+        </h2>
+
+        <p class="text-white/60 text-lg mb-8">
+          Launch a campaign or join our creator network today.
+        </p>
+
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <button
+            class="bg-white text-black px-8 py-4 rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,.25)]"
+          >
+            <a href="https://t.me/CreovateOff">Launch a Campaign →</a>
+          </button>
+
+          <button
+            class="border border-white/20 text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 hover:bg-white hover:text-black hover:scale-105"
+          >
+            <a href="https://t.me/CreovateOff">Join as Creator →</a>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- FOOTER SECTION -->
+
+    <footer id="Contact" class="max-w-7xl mx-auto px-6 pb-10 reveal">
+      <div class="grid lg:grid-cols-3 gap-12 border-t border-white/10 pt-10">
+        <!-- Brand -->
+
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 flex items-center justify-center">
+              <span class="text-white text-5xl font-bold"> C </span>
+            </div>
+
+            <span
+              class="text-white text-xl font-semibold tracking-wide"
+              style="font-family: &quot;General Sans&quot;, sans-serif"
+            >
+              CREOVATE
+            </span>
+          </div>
+
+          <p class="text-white/60 leading-relaxed max-w-xs">
+            The creator-powered growth network for Web3 projects and creators.
+          </p>
+
+          <div class="flex gap-3 mt-6">
+            <a
+              href="https://x.com/legacycreovate?s=21&t=mjsRu9Q9TgxMHTPMeEYPGA"
+              class="social-icon"
+            >
+              <img
+                src="assets/TwitterWhitelogo.webp"
+                alt="Twitter"
+                class="w-5 h-5"
+              />
+            </a>
+
+            <a href="#" class="social-icon">
+              <img
+                src="assets/telegramwhitelogo.webp"
+                alt="telegram"
+                class="w-5 h-5"
+              />
+            </a>
+          </div>
+        </div>
+
+        <!-- About -->
+
+        <div>
+          <h4 class="text-white font-semibold mb-5">About Us</h4>
+
+          <ul class="space-y-3">
+            <li>
+              <a href="#about" class="footer-link"> About Us </a>
+            </li>
+
+            <li>
+              <a href="#testimonials" class="footer-link"> Testimonials </a>
+            </li>
+
+            <li>
+              <a href="#contact" class="footer-link"> Contact </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+
+        <div id="contact">
+          <h4 class="text-white font-semibold mb-5">Connect</h4>
+
+          <div class="space-y-3">
+            <p class="text-white/70">TG @CreovateOffi</p>
+          </div>
+
+          <div class="flex gap-3 mt-6">
+            <a
+              href="https://x.com/legacycreovate?s=21&t=mjsRu9Q9TgxMHTPMeEYPGA"
+              class="social-icon"
+            >
+              <img
+                src="assets/TwitterWhitelogo.webp"
+                alt="twitter"
+                class="w-5 h-5"
+              />
+            </a>
+
+            <a href="" class="social-icon">
+              <img
+                src="assets/telegramwhitelogo.webp"
+                alt="telegrsm"
+                class="w-5 h-5"
+            /></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+
+      <div
+        class="border-t border-white/10 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4"
+      >
+        <p class="text-white/40 text-sm">
+          © 2024 Creovate. All rights reserved.
+        </p>
+
+        <div class="flex gap-6 text-sm">
+          <a href="#" class="footer-link"> Privacy Policy </a>
+
+          <a href="#" class="footer-link"> Terms of Service </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
